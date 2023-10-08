@@ -4,16 +4,16 @@
  * _memset - sets a value to each byte in array
  * @s: array
  * @x: value
+ * @n: int
  * Return: a pointer
  */
 
-char *_memset(char *s, char x)
+char *_memset(char *s, char x, unsigned int n)
 {
 	char *ptr = s;
-	unsigned int i;
 
-	for (i = 0; s[i] != '\0'; i++)
-		s[i] = x;
+	while (n--)
+		*s++ = x;
 	return (ptr);
 }
 
@@ -34,7 +34,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (m == NULL)
 		return (NULL);
-	_memset(m, 0);
+	_memset(m, 0, sizeof(int) * nmemb);
 
 	return (m);
 }
