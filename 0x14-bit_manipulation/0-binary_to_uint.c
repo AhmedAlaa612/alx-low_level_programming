@@ -8,10 +8,12 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i, j, len, sum;
-
+	const char *ptr = b;
 	if (!b)
 		return (0);
-	len = _strlen(b);
+	len = 0;
+	while(*ptr != '\0')
+		len++;
 	sum = 0;
 	for (i = 0; i < len; i++)
 	{
