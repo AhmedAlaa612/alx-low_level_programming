@@ -35,5 +35,5 @@ int create_file(const char *filename, char *text_content)
 	if (len)
 		bytes = write(file, text_content, len);
 	close(file);
-	return (bytes == len ? 1 : 0);
+	return (bytes == len ? 1 : -1);
 }
